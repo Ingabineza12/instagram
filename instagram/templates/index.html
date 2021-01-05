@@ -1,0 +1,60 @@
+{% extends 'all_news/base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
+  <div class="container">
+  <h1 class="head" style="font-family:'Grand Hotel',cursive; color: black;font-size:70px;text-align: center;">Instagram</h1>
+  {% for image in pictures %}
+  <div class="card" style="width: 35em; margin-top: 6%;margin-left: 20%;"
+  <span style="font-family: sans-serif;"><img src="{{user.profile.profile_pic.url}}" alt="Profile" class="img-responsive img_profile">{{image.user}}</span>
+
+  <img src="{{image.image.url}}" height="400" alt="pict" class="img-responsive" >
+  <div class="card-body">
+      <div>
+        <a  class="btn" href="{% url 'like' id=image.id%}" >
+            <p >{{image.likes}} Likes <i class="fa fa-heart-o" ></i></p>
+
+        </a>
+  <a href="{% url 'comment' image.id %}"><i class="fa fa-comment-o" style="color: black;"></i></a>
+        </div>
+  <p style="font-family: sans-serif;">
+    Description : {{image.description}}</p>
+  <hr>
+  {% for com in image.comment_set.all %}
+  <p>{{com.comment}}</p>
+  {% endfor %}
+  <p>add comment...</p>
+</div>
+</div>
+  {% endfor %}
+</div>
+  <div class="jumbotron text-center mt-0" style="background-color:white;">
+    <form action="{% url 'homePage' %}" method="post">
+      {%csrf_token%}
+      {% bootstrap_form letterForm %}
+      <input type="submit" value="Subscribe here">
+
+    </form>
+
+  </div>
+  <div class="container">
+
+  <div class="footer text-center">
+
+  <p style="font-size:18px;"><strong>Deborah Mugiraneza ingabire 2020</strong></p>
+
+
+  </div>
+</div>
+  <style>
+    .img_profile{
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius:50%;
+    }
+  </style>
+
+{% endblock %}
