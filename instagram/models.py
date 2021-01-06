@@ -83,7 +83,7 @@ class Profile(models.Model):
 class Followers(models.Model):
     user=models.CharField(max_length=20,default="")
     Follower=models.CharField(max_length=20)
-    profile=models.ForeignKey(Profile)
+    profile=models.ForeignKey(Profile,on_delete=models.CASCADE)
 
 class Comment(models.Model):
     posted_by=models.ForeignKey(Profile, on_delete=models.CASCADE,null=True)

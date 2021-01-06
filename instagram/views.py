@@ -2,11 +2,11 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .models import Image,Profile,Comment
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 from .forms import NewImageForm,UpdatebioForm,CommentForm
 from .email import send_welcome_email
 from .forms import NewsLetterForm
+# from django.core.urlresolvers import reverse
 
 # display images
 @login_required(login_url='/accounts/login/')
@@ -45,14 +45,14 @@ def new_image(request):
 
 
 @login_required(login_url='/accounts/login/')
-def profilemy(request,username=None):
+def myprofile(request,username=None):
     current_user=request.user
     pictures=Image.objects.filter(user=current_user)
     if not username:
         username=request.user.username
         images=Image.objects.filter(name=username)
         # proc_img=Profile.objects.filter(user=current_user).first()
-    return render(request,'profilemy.html',locals(),{"pictures":pictures})
+    return render(request,'myprofile.html',locals(),{"pictures":pictures})
 
 @login_required(login_url='/accounts/login/')
 def profile_edit(request):
