@@ -4,7 +4,6 @@
 {% load staticfiles %}
 {% block content %}
 
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,11 +16,10 @@
   <link rel="stylesheet" href="{% static 'css/news.css' %}">
 
    {% endblock %}
-
 </head>
-
 <body>
-<div class="container" style="background-color:#fff;">
+
+<div class="container" style="background-color:wheat;margin-top:100px">
 
      <div class="row">
 
@@ -30,7 +28,7 @@
     {%csrf_token%}
 
     {% bootstrap_form form%}
-    <input id="id_myfield" type="submit" class="btn btn-success btn-lg" value="Post">
+    <input id="id_myfield" type="submit" class="btn btn-success btn-lg" value="Add comment">
   </form>
 
    {% block scripts %}
