@@ -1,5 +1,5 @@
 {% extends "registration/base.html" %}
-{% load bootstrap3 %} 
+{% load bootstrap3 %}
 {% load staticfiles %}
 
   {{form.media}}
@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
 
   {% block content %}
-    <div class="container" style="background-color:#fff;">
+    <div class="container" style="background-color:wheat;">
         <div class="row">
 
   <form  action="{%url 'new_image'%}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
 
     {% bootstrap_form form%}
-    <input type="submit" class="btn btn-success btn-lg" value="Post">
+    <input type="submit" class="btn btn-success btn-lg" value="Upload">
   </form>
   {% endblock %}
    {% block scripts %}
