@@ -1,24 +1,28 @@
 {%extends "registration/base.html"%}
  {% load bootstrap3 %}
  {%load static%}
- {% load staticfiles %}
- {% block content %}
+  {% load staticfiles %}
+   {% block content %}
 
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title> Edit Your Profile Information</title>
+  <title>Edit Your Profile Information</title>
   {{form.media}}
 
 {% block styles %} {% bootstrap_css %}
   <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 <div class="container" style="background-color:wheat;">
+
+<h1 class="head" style="font-family:'Grand Hotel',cursive; color: black;padding-top:30px;font-size:45px;text-align: center;">Edit profile</h1>
 
      <div class="row">
 

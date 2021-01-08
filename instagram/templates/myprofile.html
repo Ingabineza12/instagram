@@ -2,7 +2,12 @@
 {% load bootstrap3%}
 {% load static %}
 {% block content %}
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+
   <div class="container" style="background-color:wheat;">
+  <h1 class="head" style="font-family:'Grand Hotel',cursive; color: black;padding-top:30px;font-size:45px;text-align: center;">Profile</h1>
+
   <div class="row">
   <div class="col-md-4">
   <div class="content-section">
@@ -35,7 +40,7 @@
   <hr>
   <div class="row">
     {% for user in pictures %}
-    <div class="col-md-4" style="margin-right: 5%;">
+    <div class="col-md-3" style="margin-right: 5%;">
       <img src="{{user.image.url}}" height="200" class="img-responsive">
     </div>
     {% endfor %}
