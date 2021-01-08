@@ -7,20 +7,26 @@
   <div class="col-md-4">
   <div class="content-section">
   <div class="media" style="margin-left:40px;">
-  <img src="{{user.profile.profile_pic.url}}" alt="Profile" class="img_profile img-responsive" style="margin-top:60px;">
+  <img src="{{user.profile.profile_pic.url}}" alt="Profile" class="img_profile img-responsive" style="margin-top:60px;"><br>
   <div class="media-body">
   <div class="bodd">
   <h3 class="account-heading ml-4">{{user.username}}</h3>
-  <button class="btn btn-outline-primary"><a href="{% url 'profile_edit' %}">Edit Profile</a></button><a href="{% url 'homePage' %}" ></a>
+  <button class="btn btn-outline-primary"><a href="{% url 'profile_edit' %}">Edit Profile</a></button>
+
 </div>
-  <div class="bod" style="margin-left: 3px;justify-content: space-around; margin-top:30px">
-  <p ><strong>{{user.Post}} Posts</strong></p>
+ <br>
+  <div class="bod" style="margin-left: 3px;justify-content: space-around;;">
+  <p ><strong>{{user.Post}}Posts</strong></p>
   <p ><strong>{{user|length}} Followers</strong></p>
   <p ><strong>{{user|length}} Following</strong></p>
   </div>
-  <br><br>
-  <p class="text-secondary ml-4"><strong>Email:</strong> {{user.email}}</p>
-  <p class="text-secondary ml-4"><strong>Bio:</strong> {{user.profile.bio}}</p>
+
+  <br>
+  <p class="text-secondary ml-4"><strong>Email</strong>: {{user.email}}</p>
+  <p class="text-secondary ml-4"><strong>Bio</strong>: {{user.profile.bio}}</p>
+  <br>
+  <a href="{% url 'homePage' %}" ><i class="fa fa-home" style="font-size: 20px;color: black;">| Home</i></a>
+
   </div>
 </div>
 </div>
