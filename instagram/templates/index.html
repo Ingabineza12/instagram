@@ -4,8 +4,10 @@
 {% block content %}
 
 <link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
-  <div class="container">
-  <h1 class="head" style="font-family:'Grand Hotel',cursive; color: black;font-size:70px;text-align: center;">Instagram</h1>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+  <div class="container" style="background-color:wheat;">
+  <h1 class="head" style="font-family:'Grand Hotel',cursive; color: black;padding-top:50px;font-size:70px;text-align: center;">Instagram</h1>
   {% for image in pictures %}
   <div class="card" style="width: 35em; margin-top: 6%;margin-left: 20%;"
   <span style="font-family: sans-serif;"><img src="{{user.profile.profile_pic.url}}" alt="Profile" class="img-responsive img_profile">{{image.user}}</span>
@@ -13,19 +15,21 @@
   <img src="{{image.image.url}}" height="400" alt="pict" class="img-responsive" >
   <div class="card-body">
       <div>
+        <p>
         <a  class="btn" href="{% url 'like' id=image.id%}" >
-            <p >{{image.likes}} Likes <i class="fa fa-heart-o" ></i></p>
+             {{image.likes}} <i class="fa fa-heart" style="color:red;"></i>
 
         </a>
-  <a href="{% url 'comment' image.id %}"><i class="fa fa-comment-o" style="color: black;"></i></a>
+  <a href="{% url 'comment' image.id %}"><i class="fa fa-comment-o" style="color: black;"></i></a></p>
         </div>
-  <p style="font-family: sans-serif;">
-    Description : {{image.description}}</p>
+  <p style="font-family:'Do Hyeon', sans-serif;"> {{image.user}} : {{image.description}}</p>
   <hr>
+  <h4 style="font-family:'Do Hyeon', sans-serif;">Comments: <br><br></h4>
   {% for com in image.comment_set.all %}
-  <p>{{com.comment}}</p>
+
+  <p> {{com.comment}}</p>
   {% endfor %}
-  <p>add comment...</p>
+  <a href="{% url 'comment' image.id %}" style="color: black;font-family:'Do Hyeon', sans-serif;">add comment...</a>
 </div>
 </div>
   {% endfor %}
