@@ -99,6 +99,6 @@ class Comment(models.Model):
     def __str__(self):
         return self.posted_by
 
-class NewsLetterRecients(models.Model):
-    name=models.CharField(max_length=30)
-    email=models.EmailField()
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()

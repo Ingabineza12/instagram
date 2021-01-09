@@ -24,8 +24,10 @@ def home_images(request):
             recipient=NewsLetterRecipients(name=name,email=email)
             recipient.save()
             send_welcome_email(name,email)
+
             HttpResponseRedirect('home_images')
     return render(request,'index.html',{"pictures":pictures,'letterForm':form,"comment":comment,"myprof":myprof})
+    # return render(request, 'all-news/today-news.html', {"date": date,"news":news,"letterForm":form})
 
 @login_required(login_url='/accounts/login/')
 def new_image(request):
