@@ -1,4 +1,4 @@
-#!/home/deborah/Desktop/instagram/virtual/bin/python
+#!/home/deborah/Documents/python-projects/django/instagram/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
